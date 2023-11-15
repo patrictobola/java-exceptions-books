@@ -62,6 +62,8 @@ public class Book {
 		return "Il libro si chiama: " + getTitle() + "\n"
 		+ "Che ha come numero di pagine: " + getPages() + "\n"
 		+ "Nome Autore: " + getAuthor() + "\n"
-		+ "Nome casa editrice: " + getPublisher() + ".";
+		+ "Nome casa editrice: " + getPublisher() + ".\n"
+		+ "---------------------------------------------";
+		
 	}
 }

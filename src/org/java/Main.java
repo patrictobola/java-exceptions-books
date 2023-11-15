@@ -14,7 +14,8 @@ public class Main {
 		Book[] library = new Book[nBooks];
 		
 		for(int x = 0; x < nBooks; x++) {
-			System.out.println("Inserisci i dati per il libro numero " + nBooks + ".");
+			try {
+			System.out.println("Inserisci i dati per il libro numero " + (x + 1) + ".");
 			System.out.print("Titolo: ");
 			String title = in.nextLine();
 			
@@ -28,13 +29,20 @@ public class Main {
 			System.out.print("Editore: ");
 			String publisher = in.nextLine();
 			
-			try {
-				library[x] = new Book(title, pages, author, publisher);
+			library[x] = new Book(title, pages, author, publisher);
+			
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
+				x--;
 			}
 			
 		}
-		System.out.println(Arrays.asList(library[0]));
+		in.close();
+//		System.out.println(Arrays.asList(library));
+		System.out.println("Libri:" + '\n'
+				+ "---------------------------------------------");
+        for (Book book : library) {
+            System.out.println(book.toString());
+        }
 	}
 }
