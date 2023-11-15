@@ -6,7 +6,7 @@ public class Book {
 	private String author;
 	private String publisher;
 	
-	public Book(String title, int pages, String author, String publisher) {
+	public Book(String title, int pages, String author, String publisher) throws Exception {
 		setTitle(title);
 		setPages(pages);
 		setAuthor(author);
@@ -17,7 +17,10 @@ public class Book {
 		return title;
 	}
 
-	public void setTitle(String title) {
+	public void setTitle(String title) throws Exception {
+		if(title.isEmpty() || title.length() < 2)
+			throw new Exception("Il titolo deve contenere almeno 2 lettere");
+		
 		this.title = title;
 	}
 
@@ -25,7 +28,10 @@ public class Book {
 		return pages;
 	}
 
-	public void setPages(int pages) {
+	public void setPages(int pages) throws Exception {
+		if(pages == 0 || pages < 10)
+			throw new Exception("Inserire un numero di pagine valide che sia superiore a 10");
+		
 		this.pages = pages;
 	}
 
@@ -33,7 +39,10 @@ public class Book {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(String author) throws Exception {
+		if(author.isEmpty() || author.length() < 2)
+			throw new Exception("L'autore deve avere un nome superiore alle 2 lettere");
+		
 		this.author = author;
 	}
 
@@ -41,7 +50,9 @@ public class Book {
 		return publisher;
 	}
 
-	public void setPublisher(String publisher) {
+	public void setPublisher(String publisher) throws Exception {
+		if(publisher.isEmpty() || publisher.length() < 2)
+			throw new Exception("L'editore deve avere almeno 2 lettere");
 		this.publisher = publisher;
 	}
 	

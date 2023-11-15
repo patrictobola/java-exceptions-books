@@ -23,12 +23,16 @@ public class Main {
 			int pages = Integer.valueOf(strPages);
 			
 			System.out.print("Autore: ");
-			String author = in.nextLine();
+			String author = in.nextLine();			
 			
 			System.out.print("Editore: ");
 			String publisher = in.nextLine();
 			
-			library[x] = new Book(title, pages, author, publisher);
+			try {
+				library[x] = new Book(title, pages, author, publisher);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 			
 		}
 		System.out.println(Arrays.asList(library[0]));
