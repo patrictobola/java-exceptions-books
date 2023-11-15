@@ -7,7 +7,10 @@ public class Book {
 	private String publisher;
 	
 	public Book(String title, int pages, String author, String publisher) {
-		
+		setTitle(title);
+		setPages(pages);
+		setAuthor(author);
+		setPublisher(publisher);
 	}
 
 	public String getTitle() {
@@ -40,5 +43,14 @@ public class Book {
 
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Il libro si chiama: " + getTitle() + "\n"
+		+ "Che ha come numero di pagine: " + getPages() + "\n"
+		+ "Nome Autore: " + getAuthor() + "\n"
+		+ "Nome casa editrice: " + getPublisher() + ".";
 	}
 }
